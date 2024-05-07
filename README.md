@@ -80,3 +80,28 @@
     - **Error:** `ERROR: deadlock detected`
     - **Cause:** Concurrent transactions holding locks on resources required by others.
     - **Solution:** Analyze transaction locks and adjust transaction isolation levels or application logic.
+
+16. **Database Corruption Due to Misaligned Block Sizes:**
+    - **Error:** `ERROR: invalid page header in block XXXX of relation XXXX`
+    - **Cause:** Data corruption caused by misaligned block sizes between PostgreSQL and the underlying storage.
+    - **Solution:** Ensure PostgreSQL's block size matches the underlying storage, and restore from a backup if corruption has occurred.
+
+17. **Data Loss Due to WAL Archiving Failure:**
+    - **Error:** WAL archives not being created or shipped to standby servers.
+    - **Cause:** Misconfigured archive_command, insufficient disk space, or network issues.
+    - **Solution:** Verify archive_command configuration, monitor disk space usage and network connectivity, and implement secondary WAL archiving methods.
+
+18. **Long Running Transactions Causing Lock Contention:**
+    - **Error:** `ERROR: could not serialize access due to concurrent update`
+    - **Cause:** Transactions holding locks for an extended period, blocking others.
+    - **Solution:** Identify and optimize long-running transactions, adjust transaction isolation levels, or implement retry mechanisms.
+
+19. **Database Corruption During Online Upgrades:**
+    - **Error:** `FATAL:  database files are incompatible with server`
+    - **Cause:** Incompatible database files between old and new PostgreSQL versions.
+    - **Solution:** Perform a test upgrade in a staging environment, ensure all database files are compatible, and backup before upgrading.
+
+20. **Concurrency Issues Caused by Lock Contention:**
+    - **Error:** `ERROR: deadlock detected`
+    - **Cause:** Concurrent transactions waiting for each other's locks.
+    - **Solution:** Analyze transaction locks, adjust transaction isolation levels, or implement deadlock detection and resolution mechanisms.
