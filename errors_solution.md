@@ -66,6 +66,99 @@
    -- Solution: Increase the length of the target column
    ALTER TABLE example_table ALTER COLUMN column1 TYPE VARCHAR(10);
    ```
-
 8. **01P01 - Deprecated Feature:**
    - **Solution:** This warning indicates the use of a deprecated feature. Review the PostgreSQL documentation or release notes to identify the deprecated feature and its recommended alternative. Update the code to use the recommended alternative to ensure compatibility with future PostgreSQL versions.
+
+Certainly! Here are solutions and explanations for each of the provided PostgreSQL error codes:
+
+1. **Class 02 — No Data:**
+   - **02000 - no_data:**
+     - **Explanation:** This warning indicates that a query returned no rows.
+     - **Solution:** Review the query logic to ensure it matches the expected data. If empty results are unexpected, check the query conditions and data availability.
+
+   - **02001 - no_additional_dynamic_result_sets_returned:**
+     - **Explanation:** This warning indicates that no additional dynamic result sets were returned by a function.
+     - **Solution:** Ensure that the function's documentation specifies the expected result sets. Review the function's logic to verify that it returns the desired result sets.
+
+2. **Class 03 — SQL Statement Not Yet Complete:**
+   - **03000 - sql_statement_not_yet_complete:**
+     - **Explanation:** This warning indicates that an SQL statement is not yet complete.
+     - **Solution:** Review the SQL statement syntax and ensure that it is properly terminated. Check for missing keywords, parentheses, or quotation marks.
+
+3. **Class 08 — Connection Exception:**
+   - **08000 - connection_exception:**
+     - **Explanation:** This error class encompasses various connection-related exceptions.
+     - **Solution:** Troubleshoot the specific connection issue based on the error message. Common solutions include verifying connection parameters, network connectivity, and database server status.
+
+   - **08003 - connection_does_not_exist:**
+     - **Explanation:** This error indicates that the specified connection does not exist.
+     - **Solution:** Check the connection parameters used in the application or client tool. Ensure that the connection string specifies the correct host, port, username, and password.
+
+   - **08006 - connection_failure:**
+     - **Explanation:** This error indicates a general connection failure.
+     - **Solution:** Check network connectivity between the client and the database server. Ensure that the database server is running and accessible from the client's network.
+
+   - **08001 - sqlclient_unable_to_establish_sqlconnection:**
+     - **Explanation:** This error indicates that the SQL client is unable to establish a connection to the database server.
+     - **Solution:** Verify the SQL client's connection settings, including the host, port, username, and password. Ensure that the database server is configured to accept incoming connections.
+
+   - **08004 - sqlserver_rejected_establishment_of_sqlconnection:**
+     - **Explanation:** This error indicates that the SQL server rejected the establishment of a connection.
+     - **Solution:** Check the database server logs for details on why the connection was rejected. Common reasons include invalid credentials or connection limits exceeded.
+
+   - **08007 - transaction_resolution_unknown:**
+     - **Explanation:** This error indicates that the outcome of a transaction is unknown.
+     - **Solution:** Review the transaction logic to ensure that it handles all possible outcomes correctly. Consider adding error handling and rollback mechanisms to address unexpected situations.
+
+   - **08P01 - protocol_violation:**
+     - **Explanation:** This error indicates a protocol violation between the client and the server.
+     - **Solution:** Verify that the client and server are using compatible PostgreSQL versions and communication protocols. Check for any firewall or network configuration issues that may be interfering with communication.
+
+1. **Class 09 — Triggered Action Exception:**
+   - **09000 - triggered_action_exception:**
+     - **Explanation:** This error class indicates an exception occurred during the execution of a triggered action (e.g., trigger function).
+     - **Solution:** Review the trigger function's code to identify the cause of the exception. Check for errors in the trigger function's logic, database constraints, or data integrity issues.
+
+2. **Class 0A — Feature Not Supported:**
+   - **0A000 - feature_not_supported:**
+     - **Explanation:** This error class indicates that a requested feature is not supported by the PostgreSQL server.
+     - **Solution:** Review the SQL statement or function call to identify the unsupported feature. Consider alternative approaches or workarounds to achieve the desired functionality.
+
+3. **Class 0B — Invalid Transaction Initiation:**
+   - **0B000 - invalid_transaction_initiation:**
+     - **Explanation:** This error class indicates an invalid transaction initiation attempt, such as starting a transaction within another transaction block.
+     - **Solution:** Review the transaction management logic to ensure proper transaction boundaries are maintained. Avoid nesting transactions or ensure that nested transactions are handled appropriately.
+
+4. **Class 0F — Locator Exception:**
+   - **0F000 - locator_exception:**
+     - **Explanation:** This error class indicates an exception related to locator operations.
+     - **Solution:** Review the SQL statement or function call involving locator operations (e.g., specifying network addresses). Check for invalid or unsupported locator specifications.
+
+   - **0F001 - invalid_locator_specification:**
+     - **Explanation:** This error indicates an invalid locator specification.
+     - **Solution:** Verify the locator specification provided in the SQL statement or function call. Ensure that it follows the correct syntax and format required by PostgreSQL.
+
+
+1. **Class 09 — Triggered Action Exception:**
+   - **09000 - triggered_action_exception:**
+     - **Explanation:** This error class indicates an exception occurred during the execution of a triggered action (e.g., trigger function).
+     - **Solution:** Review the trigger function's code to identify the cause of the exception. Check for errors in the trigger function's logic, database constraints, or data integrity issues.
+
+2. **Class 0A — Feature Not Supported:**
+   - **0A000 - feature_not_supported:**
+     - **Explanation:** This error class indicates that a requested feature is not supported by the PostgreSQL server.
+     - **Solution:** Review the SQL statement or function call to identify the unsupported feature. Consider alternative approaches or workarounds to achieve the desired functionality.
+
+3. **Class 0B — Invalid Transaction Initiation:**
+   - **0B000 - invalid_transaction_initiation:**
+     - **Explanation:** This error class indicates an invalid transaction initiation attempt, such as starting a transaction within another transaction block.
+     - **Solution:** Review the transaction management logic to ensure proper transaction boundaries are maintained. Avoid nesting transactions or ensure that nested transactions are handled appropriately.
+
+4. **Class 0F — Locator Exception:**
+   - **0F000 - locator_exception:**
+     - **Explanation:** This error class indicates an exception related to locator operations.
+     - **Solution:** Review the SQL statement or function call involving locator operations (e.g., specifying network addresses). Check for invalid or unsupported locator specifications.
+
+   - **0F001 - invalid_locator_specification:**
+     - **Explanation:** This error indicates an invalid locator specification.
+     - **Solution:** Verify the locator specification provided in the SQL statement or function call. Ensure that it follows the correct syntax and format required by PostgreSQL.
